@@ -1,0 +1,63 @@
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+header {
+    background-color:#005DAA;
+    height:100px;
+    position:relative;
+}
+
+header div.text {
+    color:#FFF;
+    padding-top:30px;
+    font-size:20px;
+}
+
+span.name {
+    color: #C2C6D3;
+}
+
+header a img {
+    float:left;
+    padding-top:15px;
+    margin-right:15px;
+}
+section.content h2 {
+    /*color:#004F39;*/
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+section.content div.about p {
+    margin-left:20px;
+    font-size:1.2em;
+}
+
+section.content div.project {
+    margin-bottom:20px;
+}
+
+section.content div.project img {
+    float:left;
+    margin-right:5px;
+}
+
+
+section.content div.project {
+    margin-left:20px;
+}
+
+section.content div.contact div.icons {
+    margin-left:20px;
+}
+
+section.content div.contact img {
+    margin-right:10px;
+}
+
+@media only screen and (max-device-width: 400px){
+    header div.text {
+        font-size:13px;
+    }
+}
+

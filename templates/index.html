@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="content">
+    <div class="about clearfix">
+        <h2>about</h2>
+        <p>I'm a college student studying computer science at the University of Nebraska Omaha.  I'm interested in programming and web development, and I have a few open source projects that I've created while learning.</p>
+    </div>
+    <div class="projects clearfix">
+        <h2>projects</h2>
+        <div class="project clearfix">
+            <a href="https://github.com/BenDoan/Infinite-Campus-Grade-Scraper">
+                <h4>Infinite Campus Grade Scraper</h4>
+                <img src="{{ url_for('static', filename='img/projects/icgs.png') }}" alt="" />
+            </a>
+            <ul>
+                <li>Contrib: Sole contributor
+                <li>Tech: Python
+                <li>An open-source application for retrieving grades from an Infinite Campus based website.  Options include the ability to send grade reports via email using SMTP, daily grade diffs, weekly grade diffs and csv logging of grades.
+            </ul>
+        </div><!-- project -->
+        <div class="project clearfix">
+            <a href="https://github.com/OmahaBytes/MW-Resource-Checkout">
+                <h4>MW Resource Checkout</h4>
+                <img src="{{ url_for('static', filename='img/projects/mwrc.png') }}" alt="" />
+            </a>
+            <ul>
+                <li>Contrib: Coding, Design
+                <li>Tech: PHP, SQL, Javascript
+                <li>An open-source webapp for scheduling resources like computer labs, lecture halls, conference rooms, etc.  Contains a full admin panel for user and resource management, a resource history viewer and full logging.
+            </ul>
+        </div><!-- project -->
+        <div class="project clearfix">
+            <a href="http://www.westwildcats.org/news/">
+                <h4>Pawprint Student Newspaper</h4>
+                <img src="{{ url_for('static', filename='img/projects/pawprint.png') }}" alt="" />
+            </a>
+            <ul>
+                <li>Contrib: Coding, Design
+                <li>Tech: PHP, Wordpress
+                <li>The Millard West Pawprint student newspaper website.  Implements a widget for listing recent school news reports, a photo of the day and advertisements.
+            </ul>
+        </div><!-- project -->
+        <div class="project clearfix">
+            <a href="https://github.com/BenDoan/Persistant-Backup">
+                <h4>Persistant Backup</h4>
+                <img src="{{ url_for('static', filename='img/projects/icgs.png') }}" alt="" />
+            </a>
+            <ul>
+                <li>Contrib: Sole contributor
+                <li>Tech: Python
+                <li>A program for persistantly managing backups for mobile devices like laptops and cell phones that cannot be realiably backed up on set schedules.
+
+            </ul>
+        </div><!-- project -->
+        <div class="project clearfix">
+            <a href="https://github.com/BenDoan/BenPad">
+                <h4>BenPad</h4>
+                <img src="{{ url_for('static', filename='img/projects/BenPad.png') }}" alt="" />
+            </a>
+            <ul>
+                <li>Contrib: Sole contributor
+                <li>Tech: C++, QT
+                <li>A basic, multiplatform, tabbed, open-source programming text editor.
+            </ul>
+        </div><!-- project -->
+        <div class="project clearfix">
+            <a href="http://www.sanfordarchitecture.com">
+                <h4>Sanford Architecture</h4>
+                <img src="{{ url_for('static', filename='img/projects/sanford.png') }}" alt="" />
+            </a>
+            <ul>
+                <li>Contrib: Sole contributor
+                <li>Tech: PHP, Wordpress
+                <li>A portfolio website for an Omaha architecture firm, with a Wordpress back-end.  Everything on the site is editable by a user with no technical knowledge.
+            </ul>
+        </div><!-- project -->
+    </div><!-- projects -->
+    <div class="contact">
+        <h2>contact</h2>
+        <div class="icons">
+            <a href="mailto:ben@bendoan.me"><img src="{{ url_for('static', filename='img/icons/email.png') }}" alt="" /></a>
+            <a href="http://github.com/BenDoan"><img src="{{ url_for('static', filename='img/icons/github.png') }}" alt="" /></a>
+            <a href="https://plus.google.com/117563615517340523254"><img src="{{ url_for('static', filename='img/icons/gplus.png') }}" alt="" /></a>
+        </div>
+    </div>
+</section>
+{% endblock %}

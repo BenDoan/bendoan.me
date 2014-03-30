@@ -52,3 +52,8 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+include/
+lib64
+deploy/
+.webassets-cache/
+gen/
