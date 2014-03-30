@@ -56,4 +56,4 @@ include/
 lib64
 deploy/
 .webassets-cache/
-gen/
+static/css/gen/
