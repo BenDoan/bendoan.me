@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>{{ page.title }}</h2>
+    <h2><a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a></h2>
+    {% with page=page %}
+        {% include "meta.html" %}
+    {% endwith %}
+    <hr />
     {{ page.html|safe }}
+
+    {% include "comments.html" %}
 {% endblock content %}

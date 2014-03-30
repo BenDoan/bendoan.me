@@ -4,7 +4,7 @@ body {
 
 header {
     background-color:#005DAA;
-    height:100px;
+    height:120px;
     position:relative;
 }
 
@@ -20,7 +20,7 @@ span.name {
 
 header a img {
     float:left;
-    padding-top:15px;
+    padding-top:27px;
     margin-right:15px;
 }
 section.content h2 {
@@ -61,3 +61,15 @@ section.content div.contact img {
     }
 }
 
+div.blog-link {
+}
+
+header a, header a:visited {
+    text-decoration: none;
+    color: #C2C6D3;
+}
+
+header a.active {
+    border-bottom: 4px solid black;
+    color: #C2C6D3;
+}

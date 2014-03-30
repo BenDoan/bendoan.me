@@ -1,5 +1,5 @@
 Flask==0.10.1
-Flask-Environments==0.1
+Flask-Assets==0.9
 Flask-FlatPages==0.5
 Frozen-Flask==0.11
 Jinja2==2.7.2
@@ -9,6 +9,6 @@ PyYAML==3.11
 Werkzeug==0.9.4
 cssmin==0.2.0
 htmlmin==0.1.5
-ipython==1.2.1
 itsdangerous==0.24
+webassets==0.9
 wsgiref==0.1.2

@@ -35,8 +35,11 @@
             <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='img/logo_grey.png') }}" alt="" /></a>
             <div class="text">
                 <div>Hello, my name is <span class="name">Ben Doan</span></div>
-                <div>I'm a programmer/student/web dev <a href="{{ url_for('blog') }}">blog</a></div>
+                <div>I'm a programmer and a student</div>
+                <div><a {% if request.path == "/" %}class="active" {% endif %}href="{{ url_for('index') }}">portfolio</a> | <a {% if request.path != "/" %}class="active" {% endif %}href="{{ url_for('blog') }}">blog</a></div>
             </div><!-- .text -->
+            <div class="blog-link">
+            </div>
         </div><!-- .container -->
     </header>
 

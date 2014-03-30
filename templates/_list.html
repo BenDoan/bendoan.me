@@ -8,8 +8,13 @@
             <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
         {% endfor %}
     {% endif %}
+    <div>
+        {{ page.html|striptags|trim|truncate(300) }}
+    </div>
+    <br />
     </li>
 {% else %}
     <li>No page.</li>
 {% endfor %}
 </ul>
+
