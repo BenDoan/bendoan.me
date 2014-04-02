@@ -1,6 +1,8 @@
 #!/usr/bin/env python2
 
 import sys
+import os
+import shutil
 
 from flask import Flask, render_template, request
 from flask.ext.assets import Environment, Bundle
@@ -20,6 +22,8 @@ FLATPAGES_EXTENSION = ".md"
 FREEZER_BASE_URL = BASE_URL
 FREEZER_DESTINATION = "deploy"
 
+WEB_ASSETS_PATH = FREEZER_DESTINATION + os.sep +'static' + os.sep + '.webassets-cache'
+HTACCESS_PATH = FREEZER_DESTINATION + os.sep + ".htaccess"
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -54,6 +58,8 @@ def tag(tag):
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         freezer.freeze()
+        shutil.copy2(".htaccess", HTACCESS_PATH)
+        shutil.rmtree(WEB_ASSETS_PATH, ignore_errors=True)
     elif len(sys.argv) > 1 and sys.argv[1] == "test":
         freezer.run(debug=True, port=8000)
     else:

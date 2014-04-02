@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: Trebuchet, sans-serif;
 }
 
 header {
@@ -25,7 +25,7 @@ header a img {
 }
 h2 {
     /*color:#004F39;*/
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
 }
 
 section.content div.about p {
@@ -35,6 +35,7 @@ section.content div.about p {
 
 section.content div.project {
     margin-bottom:20px;
+    margin-left:20px;
 }
 
 section.content div.project img {
@@ -42,9 +43,12 @@ section.content div.project img {
     margin-right:5px;
 }
 
+section.content div.project ul li {
+    margin-bottom:1px;
+}
 
-section.content div.project {
-    margin-left:20px;
+section.content div.project ul li:last-child {
+    margin-top:7px;
 }
 
 section.content div.contact div.icons {
