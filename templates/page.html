@@ -3,10 +3,10 @@
 {% block content %}
     <h2><a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a></h2>
     {% with page=page %}
-        {% include "meta.html" %}
+        {% include "_meta.html" %}
     {% endwith %}
     <hr />
     {{ page.html|safe }}
 
-    {% include "comments.html" %}
+    {% include "_comments.html" %}
 {% endblock content %}

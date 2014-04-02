@@ -11,14 +11,15 @@ from htmlmin import minify
 
 DEBUG = True
 
+BASE_URL = "http://www.bendoan.me"
+SITE_NAME = "Bendoan.me"
+
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = ".md"
 
-FREEZER_BASE_URL = "http://simcaster.net/portfolio/"
+FREEZER_BASE_URL = BASE_URL
 FREEZER_DESTINATION = "deploy"
 
-BASE_URL = "simcaster.net/portfolio/"
-SITE_NAME = "Bendoan.me"
 
 app = Flask(__name__)
 app.config.from_object(__name__)
