@@ -39,7 +39,7 @@ assets.register('css_all', css)
 
 @app.route("/")
 def index():
-    return minify(render_template('index.html', pages=pages))
+    return minify(render_template('portfolio.html', pages=pages))
 
 @app.route("/blog/")
 def blog():
