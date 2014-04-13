@@ -39,7 +39,7 @@ assets.register('css_all', css)
 
 @app.route("/")
 def index():
-    return minify(render_template('portfolio.html', pages=pages))
+    return minify(render_template('portfolio.html'))
 
 @app.route("/blog/")
 def blog():
@@ -59,7 +59,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         freezer.freeze()
         shutil.copy2(".htaccess", HTACCESS_PATH)
-        shutil.rmtree(WEB_ASSETS_PATH, ignore_errors=True)
+        shutil.rmtree(WEB_ASSETS_PATH, ignore_errors=True)#deletes metadata from static
     elif len(sys.argv) > 1 and sys.argv[1] == "test":
         freezer.run(debug=True, port=8000)
     else:
