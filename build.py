@@ -1,8 +1,10 @@
 #!/usr/bin/env python2
 
-import sys
+import datetime
+import operator
 import os
 import shutil
+import sys
 
 from flask import Flask, render_template, request
 from flask.ext.assets import Environment, Bundle
@@ -43,16 +45,19 @@ def index():
 
 @app.route("/blog/")
 def blog():
-    return minify(render_template('blog.html', pages=pages))
+    # ISO formatted dates can be sorted as plain strings
+    p = sorted(pages, key=lambda p: p['date'], reverse=True)
+    return minify(render_template('blog.html', pages=p))
 
 @app.route('/blog/<path:path>/')
 def page(path):
     page = pages.get_or_404(path)
     return minify(render_template('page.html', page=page))
 
-@app.route("/blog/tag/<string:tag>/")
+@app.route("/blog/tag/<tag>/")
 def tag(tag):
-    tagged = [p for p in pages if tag in p.meta.get('tags', [])]
+    tagged = filter(lambda p: tag in p.meta.get('tags',[]), pages)
+    tagged = sorted(tagged, key=lambda p: p['date'], reverse=True)
     return minify(render_template('tag.html', pages=tagged, tag=tag))
 
 if __name__ == "__main__":

@@ -1,2 +1,2 @@
-python build.py build
-scp -r deploy/* bendoan:/home/public
+python build.py build &&
+    rsync -r --progress deploy/ bendoan:/home/public

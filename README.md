@@ -1,4 +1,4 @@
-My personal portfolio/blog.  The website is a generated static website.  It's built with Flask, Frozen-Flask, Skeleton.css.
+My personal portfolio/blog.  This is a generated static website built with Flask, Frozen-Flask, and Skeleton.css.
 
 "python build.py build" builds the site into the deploy directory using markdown blog posts from the pages directory.
 

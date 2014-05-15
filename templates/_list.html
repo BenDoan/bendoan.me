@@ -12,10 +12,10 @@
     <div>
         {{ page.html|striptags|trim|truncate(300) }}
     </div>
-    <br />
     </li>
+    <br />
 {% else %}
-    <li>No page.</li>
+    <li>No pages.</li>
 {% endfor %}
 </ul>
 
