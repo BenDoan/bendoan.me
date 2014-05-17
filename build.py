@@ -6,10 +6,13 @@ import os
 import shutil
 import sys
 
+from urlparse import urljoin
+
 from flask import Flask, render_template, request
 from flask.ext.assets import Environment, Bundle
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
+from werkzeug.contrib.atom import AtomFeed
 from htmlmin import minify
 
 
@@ -17,6 +20,7 @@ DEBUG = True
 
 BASE_URL = "http://www.bendoan.me"
 SITE_NAME = "Bendoan.me"
+RSS_NUM_POSTS = 15
 
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = ".md"
@@ -59,6 +63,19 @@ def tag(tag):
     tagged = filter(lambda p: tag in p.meta.get('tags',[]), pages)
     tagged = sorted(tagged, key=lambda p: p['date'], reverse=True)
     return minify(render_template('tag.html', pages=tagged, tag=tag))
+
+@app.route('/blog/posts.atom')
+def feed():
+    feed = AtomFeed("Recent Posts", feed_url=request.url, url=request.url_root)
+    posts = sorted(pages, key=lambda p: p['date'], reverse=True)[:RSS_NUM_POSTS]
+    for p in posts:
+        feed.add(p.meta['title'], unicode(p.html),
+                content_type='html',
+                author=p.meta['author'],
+                url=urljoin(urljoin(request.url_root, "blog/arch"), p.path),
+                updated=p.meta['date'],
+                published=p.meta['date'])
+    return feed.get_response()
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":

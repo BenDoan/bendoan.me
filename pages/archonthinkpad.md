@@ -5,7 +5,7 @@ author: Ben Doan
 
 ![Thinkpad](http://bendoan.me/static/img/thinkpad.jpg)
 
-I had a free day today, so I decided to leave Fedora and reinstall Arch Linux on my laptop.  When I first installed Arch on this computer, a Lenovo Thinkpad 440s, I ran into a number of issues.  I found a few tricks to make the installation process go smoothly.
+I had a free day today, so I decided to leave Fedora and reinstall Arch Linux on my laptop.  When I first installed Arch on this computer, a Lenovo Thinkpad 440s, I ran into a number of issues.  I found a few tricks to make the installation process go smoothly that I've included here for future reference.
 
 One issue I encountered in my previous install was that sound didn't work at all.  To get that working I needed to add some extra configuration to alsa in /etc/modprobe.d/alsa.conf:
 

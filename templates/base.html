@@ -10,10 +10,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     {% assets "css_all" %}
-        <link href="{{ ASSET_URL }}" media="all" rel="stylesheet" type="text/css" />
+        <link href="{{ ASSET_URL }}" media="all" rel="stylesheet" type="text/css">
     {% endassets %}
 
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link href="/blog/posts.atom" rel="alternative" title="Blog Feed" type="application/atom+xml">
     {% include "_analytics.html" %}
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
