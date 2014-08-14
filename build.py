@@ -8,13 +8,12 @@ import sys
 
 from urlparse import urljoin
 
-from flask import Flask, render_template, request
 from flask.ext.assets import Environment, Bundle
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
-from werkzeug.contrib.atom import AtomFeed
+from flask import Flask, render_template, request
 from htmlmin import minify
-
+from werkzeug.contrib.atom import AtomFeed
 
 DEBUG = True
 
