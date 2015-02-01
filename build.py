@@ -6,7 +6,7 @@ import os
 import shutil
 import sys
 
-from urlparse import urljoin
+from os import path
 
 from flask.ext.assets import Environment, Bundle
 from flask_flatpages import FlatPages
@@ -14,6 +14,11 @@ from flask_frozen import Freezer
 from flask import Flask, render_template, request
 from htmlmin import minify
 from werkzeug.contrib.atom import AtomFeed
+
+try:
+    from urlparse import urljoin
+except ImportError:
+    from urllib.parse import urljoin
 
 DEBUG = True
 
@@ -27,8 +32,8 @@ FLATPAGES_EXTENSION = ".md"
 FREEZER_BASE_URL = BASE_URL
 FREEZER_DESTINATION = "deploy"
 
-WEB_ASSETS_PATH = FREEZER_DESTINATION + os.sep +'static' + os.sep + '.webassets-cache'
-HTACCESS_PATH = FREEZER_DESTINATION + os.sep + ".htaccess"
+WEB_ASSETS_PATH = path.join(FREEZER_DESTINATION, 'static', '.webassets-cache')
+HTACCESS_PATH = path.join(FREEZER_DESTINATION, ".htaccess")
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -68,7 +73,7 @@ def feed():
     feed = AtomFeed("Recent Posts", feed_url=request.url, url=request.url_root)
     posts = sorted(pages, key=lambda p: p['date'], reverse=True)[:RSS_NUM_POSTS]
     for p in posts:
-        feed.add(p.meta['title'], unicode(p.html),
+        feed.add(p.meta['title'], p.html,
                 content_type='html',
                 author=p.meta['author'],
                 url=urljoin(urljoin(request.url_root, "blog/arch"), p.path),
