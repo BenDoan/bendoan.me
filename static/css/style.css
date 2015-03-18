@@ -96,3 +96,8 @@ pre {
     border: 1px dashed black;
 
 }
+
+div.post img {
+    max-width: 100%;
+    height: auto;
+}

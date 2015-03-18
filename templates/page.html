@@ -2,12 +2,14 @@
 {% block title %}{{ page.title }}{% endblock title %}
 
 {% block content %}
-    <h2><a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a></h2>
-    {% with page=page %}
-        {% include "_meta.html" %}
-    {% endwith %}
-    <hr />
-    {{ page.html|safe }}
+    <div class="post">
+        <h2><a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a></h2>
+        {% with page=page %}
+            {% include "_meta.html" %}
+        {% endwith %}
+        <hr />
+        {{ page.html|safe }}
+    </div>
 
     {% include "_comments.html" %}
 {% endblock content %}
